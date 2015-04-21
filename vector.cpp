@@ -45,7 +45,7 @@ void Vector::readAirports()
     float longitude;
     char name[100];
     
-    file.open("airportsLL.txt");
+    file.open("airportLL.txt");
     
     while(std::getline(file, line))
     {
