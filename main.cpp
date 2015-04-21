@@ -1,7 +1,7 @@
 //Style: 0 out of 9
 //Design: 14 out of 23
 //Const: 1 out of 7
-//Operation: 7 out of 11
+//Operation: 11 out of 11
 
 #include <cstdio>
 #include <cstdlib>
@@ -46,20 +46,20 @@ void run(Vector *cities)
         
         if (strcmp(cities->returnStateName(abv1),"State Name Not Found") == 0 && strcmp(cities->returnStateName(abv2),"State Name Not Found") != 0)
         {
-            printf("%s is not a valid airport\n\n", abv1);
+            printf("%s is not a valid airport.\n", abv1);
             continue;
         }
 
         if (strcmp(cities->returnStateName(abv1),"State Name Not Found") == 0 && strcmp(cities->returnStateName(abv2),"State Name Not Found") == 0)
         {
-            printf("%s is not a valid airport\n", abv1);
-            printf("%s is not a valid airport\n\n", abv2);
+            printf("%s is not a valid airport.\n", abv1);
+            printf("%s is not a valid airport.\n", abv2);
             continue;
         }
         
         if (strcmp(cities->returnStateName(abv1),"State Name Not Found") != 0 && strcmp(cities->returnStateName(abv2),"State Name Not Found") == 0)
         {
-            printf("%s is not a valid airport\n\n", abv2);
+            printf("%s is not a valid airport.\n", abv2);
             continue;
         }
         
