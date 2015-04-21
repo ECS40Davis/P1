@@ -1,6 +1,6 @@
 #ifndef VECTOR_H
 #define VECTOR_H
-#include "City.h"
+#include "city.h"
 
 class Vector
 {
