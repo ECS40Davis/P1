@@ -1,5 +1,5 @@
 //Style: 0 out of 9
-//Design: 18 out of 23
+//Design: 19 out of 23
 //Const: 1 out of 7
 //Operation: 11 out of 11
 
@@ -66,7 +66,7 @@ void City::deallocate()
     
     free(name);
     free(state);
-    //free(airport);
+    //fre(airport);
         
 } // deallocate()
                       
