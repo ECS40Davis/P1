@@ -1,11 +1,16 @@
+//Style: 0 out of 9
+//Design: 18 out of 23
+//Const: 1 out of 7
+//Operation: 11 out of 11
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 #include <ctype.h>
-#include "city.h"
 #include <cstring>
 #include <iostream>
+#include "city.h"
 
 #define R 3963
 
@@ -32,11 +37,11 @@ void City::readAirport(char *airports)
     }	
 } // readAirport()
 
-void City::readCities(char *name, char *state, float population)
+void City::readCities(char *n, char *st, float pop)
 {
-    this->name = name;
-    this->state = state;
-    this->population = population;
+    this->name = n;
+    this->state = st;
+    this->population = pop;
     
 } // readCities()
                       
@@ -101,5 +106,4 @@ double City::calcPopulation(City city2)
     return (this->population * city2.population) / 250000000 ;
     
 }
-
 
