@@ -1,9 +1,9 @@
-  #include <stdlib.h>
+#include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
 #include <math.h>
-#include "Vector.h"
-#include "City.h"
+#include "vector.h"
+#include "city.h"
 #include <fstream>
                       
 void Vector::initialize()
@@ -45,7 +45,7 @@ void Vector::readAirports()
     float longitude;
     char name[100];
     
-    file.open("/home/nathaniel/Desktop/P1/P1/airportsLL.txt");
+    file.open("airportsLL.txt");
     
     while(std::getline(file, line))
     {
@@ -82,7 +82,7 @@ void Vector::readCities()
     std::fstream file;
     std::string line;
     
-    file.open("/home/nathaniel/Desktop/P1/P1/citypopulations.csv");
+    file.open("citypopulations.csv");
    
     while(std::getline(file, line))
     {
