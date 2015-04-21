@@ -3,7 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include <ctype.h>
-#include "City.h"
+#include "city.h"
 #include <cstring>
 #include <iostream>
 
