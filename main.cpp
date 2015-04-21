@@ -1,8 +1,13 @@
+//Style: 0 out of 9
+//Design: 14 out of 23
+//Const: 1 out of 7
+//Operation: 7 out of 11
+
 #include <cstdio>
 #include <cstdlib>
-#include "vector.h"
 #include <math.h>
 #include <cstring>
+#include "vector.h"
 
 void run(Vector *cities);
                       
@@ -27,7 +32,7 @@ void run(Vector *cities)
     
     while (1)
     {
-        printf("Please enter two airport abbreviations (XXX XXX = done): ");
+        printf("\nPlease enter two airport abbreviations (XXX XXX = done): ");
         scanf("%s %s", abv1, abv2);
     
         distance = cities->calcDistance(abv1, abv2);
@@ -60,7 +65,7 @@ void run(Vector *cities)
         
         if (strcmp(cities->returnStateName(abv1),"State Name Not Found") != 0 && strcmp(cities->returnStateName(abv2),"State Name Not Found") != 0)
         {    printf("%.0f passengers fly the %.0f miles from\n", floor(passengers), floor(distance));
-             printf("%s, %s to %s, %s.\n\n", cities->returnname(abv1), 
+             printf("%s,%s to %s,%s\n", cities->returnname(abv1), 
                 cities->returnStateName(abv1), 
                 cities->returnname(abv2), 
                 cities->returnStateName(abv2));
