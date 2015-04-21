@@ -1,6 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
-#include "Vector.h"
+#include "vector.h"
 #include <math.h>
 #include <cstring>
 
