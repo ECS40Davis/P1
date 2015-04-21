@@ -1,5 +1,10 @@
+//Style: 0 out of 9
+//Design: 18 out of 23
+//Const: 1 out of 7
+//Operation: 11 out of 11
+
 #ifndef CITY_H
-#define CITY_H
+  #define CITY_H
 
 #include <stdlib.h>
 
@@ -17,25 +22,25 @@ class City
         // sets default values
         void initialize();
     
-        // parses line from airportsLL.txt
-        void readAirport(char *airports);
+        // parses line from airpotLL.txt
+        void readAirport(char *airs);
     
-        // parses line from citypopulations.csv
-        void readCities(char *name, char *state, float population);
+        // parses line from citypops.csv
+        void readCities(char *n, char *st, float pop);
             
-        // true if cities have identical names
+        // true if cities have identical nams
         bool isEqual(City city2);
         
-        //set airport of local City variable of findAirport()
-        void setAirport(char *airportName);
+        //set airpot of local City variable of findAirport()
+        void setAirport(char *airName);
     
         // DO THIS ONE LATER
         void copyLocation(City city2);
     
-        // true if city has airport
+        // true if city has airpot
         bool hasAirport();
     
-        // calculate distance between airports
+        // calculate distance between airpots
         double calcDistance(City city2);
         
         double calcPopulation(City city2);
