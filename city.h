@@ -1,5 +1,5 @@
 //Style: 0 out of 9
-//Design: 18 out of 23
+//Design: 21 out of 23
 //Const: 1 out of 7
 //Operation: 11 out of 11
 
@@ -47,6 +47,19 @@ class City
     
         // kills memory leaks or unrecoverable space
         void deallocate();
+
+        // New functions
+        // Compare Airports
+        int cmpAirport(City *city1, City *city2);
+  
+        // Compare Abbreviations
+        int cmpAbv(char *abv);
+
+        // Get Name
+        char* getName(void);
+ 
+        // Get State
+        char* getState(void);
         
 }; //endclass
 
