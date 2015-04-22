@@ -1,10 +1,15 @@
+//Style: 0 out of 9
+//Design: 21 out of 23
+//Const: 1 out of 7
+//Operation: 11 out of 11
+
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
 #include <math.h>
+#include <fstream>
 #include "vector.h"
 #include "city.h"
-#include <fstream>
                       
 void Vector::initialize()
 {
@@ -112,12 +117,13 @@ int Vector::findAirport(char *airportName)
     City city1;
     city1.initialize();
     city1.setAirport(airportName);
+    City city2;
     
     for (int i = 0; i < this->count; i++)
     {
-        City city2 = cityArray[i];
+        city2 = cityArray[i];
      
-        if (strcmp(city1.airport, city2.airport) == 0)
+        if (city1.cmpAirport(&city1, &city2) == 0)
         {
             return i;
         } //if
@@ -189,8 +195,8 @@ char* Vector::returnname(char *abv1)
 {
     //takes in abbreviation, searches thru array for abv, return name of abv
     for (int i = 0; i < count; i++)
-        if (strcmp(abv1, cityArray[i].airport) == 0)
-            return cityArray[i].name;
+        if (cityArray[i].cmpAbv(abv1) == 0)
+            return cityArray[i].getName();
     return strdup("City Name Not Found");
     
 } //returnname
@@ -198,8 +204,7 @@ char* Vector::returnname(char *abv1)
 char* Vector::returnStateName(char *abv1)
 {
     for (int i = 0; i < count; i++)
-        if (strcmp(abv1, cityArray[i].airport) == 0)
-            return cityArray[i].state;
+        if (cityArray[i].cmpAbv(abv1) == 0)
+            return cityArray[i].getState();
     return strdup("State Name Not Found");
 } //returnStateName
-
