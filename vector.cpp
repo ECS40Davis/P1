@@ -1,6 +1,6 @@
 //Style: 0 out of 9
 //Design: 21 out of 23
-//Const: 1 out of 7
+//Const: 3 out of 7
 //Operation: 11 out of 11
 
 #include <stdlib.h>
@@ -70,9 +70,9 @@ void Vector::readAirports()
             for (int i = 0; i < count; i++)
             {
                 
-                if (tempCity.isEqual(cityArray[i]))
+                if (tempCity.isEqual(&cityArray[i], &tempCity))
                 {
-                    cityArray[i].copyLocation(tempCity);
+                    cityArray[i].copyLocation(&tempCity);
                 } //if
             } //for
         } //if
