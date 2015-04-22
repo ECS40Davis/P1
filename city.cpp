@@ -1,6 +1,6 @@
 //Style: 0 out of 9
 //Design: 21 out of 23
-//Const: 3 out of 7
+//Const: 4 out of 7
 //Operation: 11 out of 11
 
 #include <stdio.h>
@@ -70,9 +70,9 @@ void City::deallocate()
         
 } // deallocate()
                       
-void City::setAirport(char *airportName)
+void City::setAirport(const char *airportName)
 {    
-    this->airport = airportName;
+    airport = strdup(airportName);
 }
                       
 bool City::hasAirport()
