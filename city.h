@@ -1,6 +1,6 @@
 //Style: 0 out of 9
 //Design: 21 out of 23
-//Const: 1 out of 7
+//Const: 3 out of 7
 //Operation: 11 out of 11
 
 #ifndef CITY_H
@@ -29,13 +29,13 @@ class City
         void readCities(char *n, char *st, float pop);
             
         // true if cities have identical nams
-        bool isEqual(City city2);
+        bool isEqual(const City *city1, const City *city2);
         
         //set airpot of local City variable of findAirport()
         void setAirport(char *airName);
     
         // DO THIS ONE LATER
-        void copyLocation(City city2);
+        void copyLocation(const City *city2);
     
         // true if city has airpot
         bool hasAirport();
