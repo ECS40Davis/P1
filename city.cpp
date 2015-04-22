@@ -1,5 +1,5 @@
 //Style: 0 out of 9
-//Design: 19 out of 23
+//Design: 21 out of 23
 //Const: 1 out of 7
 //Operation: 11 out of 11
 
@@ -107,3 +107,24 @@ double City::calcPopulation(City city2)
     
 }
 
+// New Functions
+
+int City::cmpAirport(City *city1, City *city2)
+{
+  return strcmp(city1->airport, city2->airport);
+}//int cmpAirport(City city1, City city2);
+
+int City::cmpAbv(char *abv)
+{
+  return strcmp(abv, airport);
+}//City::cmpAbv(char *abv)
+
+char* City::getName(void)
+{
+  return name;
+}//City::getName(void)
+
+char* City::getState(void)
+{
+  return state;
+}
