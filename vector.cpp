@@ -1,6 +1,6 @@
 //Style: 0 out of 9
 //Design: 21 out of 23
-//Const: 4 out of 7
+//Const: 5 out of 7
 //Operation: 11 out of 11
 
 #include <stdlib.h>
@@ -112,7 +112,7 @@ void Vector::readCities()
                 
 } // readCities()
                       
-int Vector::findAirport(char *airportName)
+int Vector::findAirport(const char *airportName, const City *cityArr)
 {
     City city1;
     city1.initialize();
@@ -121,7 +121,7 @@ int Vector::findAirport(char *airportName)
     
     for (int i = 0; i < this->count; i++)
     {
-        city2 = cityArray[i];
+        city2 = cityArr[i];
      
         if (city1.cmpAirport(&city1, &city2) == 0)
         {
@@ -158,10 +158,10 @@ void Vector::cleanCities()
 
 double Vector::calcDistance(char *abv1, char *abv2)
 {
-    int index = findAirport(abv1);
+    int index = findAirport(abv1, cityArray);
     City city1 = cityArray[index];
     
-    int index2 = findAirport(abv2);
+    int index2 = findAirport(abv2, cityArray);
     City city2 = cityArray[index2];
     
     return city1.calcDistance(city2);
@@ -172,10 +172,10 @@ double Vector::calcDistance(char *abv1, char *abv2)
                       
 double Vector::calcPopulation(char *abv1, char*abv2)
 {
-    int index = findAirport(abv1);
+    int index = findAirport(abv1, cityArray);
     City city1 = cityArray[index];
     
-    int index2 = findAirport(abv2);
+    int index2 = findAirport(abv2, cityArray);
     City city2 = cityArray[index2];
     
     return city1.calcPopulation(city2);
