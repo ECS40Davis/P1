@@ -1,6 +1,6 @@
 //Style: 0 out of 9
-//Design: 16 out of 23
-//Const: 1 out of 7
+//Design: 23 out of 23
+//Const: 5 out of 7
 //Operation: 11 out of 11
 
 #ifndef VECTOR_H
