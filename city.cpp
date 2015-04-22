@@ -1,6 +1,6 @@
 //Style: 0 out of 9
 //Design: 21 out of 23
-//Const: 1 out of 7
+//Const: 3 out of 7
 //Operation: 11 out of 11
 
 #include <stdio.h>
@@ -45,19 +45,19 @@ void City::readCities(char *n, char *st, float pop)
     
 } // readCities()
                       
-bool City::isEqual(City city2)
+bool City::isEqual(const City *city1, const City *city2)
 {
-    if (strcmp(city2.name, this->name) == 0)
+    if (strcmp(city2->name, city1->name) == 0)
 	return true;
     return false;
         
 } // isEqual()
                       
-void City::copyLocation(City city2)
+void City::copyLocation(const City *city2)
 {
-    this->airport = city2.airport;
-    this->latitude = city2.latitude;
-    this->longitude = city2.longitude;    
+    this->airport = city2->airport;
+    this->latitude = city2->latitude;
+    this->longitude = city2->longitude;    
     
 } // copyLocation()
                       
