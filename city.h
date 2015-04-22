@@ -1,6 +1,6 @@
 //Style: 0 out of 9
 //Design: 21 out of 23
-//Const: 3 out of 7
+//Const: 4 out of 7
 //Operation: 11 out of 11
 
 #ifndef CITY_H
@@ -32,7 +32,7 @@ class City
         bool isEqual(const City *city1, const City *city2);
         
         //set airpot of local City variable of findAirport()
-        void setAirport(char *airName);
+        void setAirport(const char *airName);
     
         // DO THIS ONE LATER
         void copyLocation(const City *city2);
