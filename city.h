@@ -1,8 +1,3 @@
-//Style: 8 out of 9
-//Design: 21 out of 23
-//Const: 5 out of 7
-//Operation: 11 out of 11
-
 #ifndef CITY_H
   #define CITY_H
 
@@ -41,9 +36,9 @@ class City
         bool hasAirport();
     
         // calculate distance between airpots
-        double calcDistance(City city2);
+        void calcDistance(const City *city1, const City *city2);
         
-        double calcPopulation(City city2);
+        int const calcPopulation(const City *city1, const City *city2);
     
         // kills memory leaks or unrecoverable space
         void deallocate();
