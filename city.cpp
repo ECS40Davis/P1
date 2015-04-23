@@ -1,6 +1,6 @@
-//Style: 0 out of 9
+//Style: 8 out of 9
 //Design: 21 out of 23
-//Const: 4 out of 7
+//Const: 5 out of 7
 //Operation: 11 out of 11
 
 #include <stdio.h>
