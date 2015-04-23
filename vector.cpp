@@ -41,7 +41,6 @@ void Vector::resize()
                       
 void Vector::readAirports()
 {
-    
     //supposed to call isEqual() and copyLocation()
     std::fstream file;
     std::string line;
@@ -49,16 +48,14 @@ void Vector::readAirports()
     float latitude;
     float longitude;
     char name[100];
-    
     file.open("airportLL.txt");
     
     while(std::getline(file, line))
     {
         char *cstring = strdup(line.c_str());
-       
         int fsf = sscanf(cstring, "%s  %f  %f  %[^\n]%*c", 
                 airport, &latitude, &longitude, name);
-        
+
         if (fsf == 4)
         {
             strtok(name, ",");
@@ -69,7 +66,7 @@ void Vector::readAirports()
             
             for (int i = 0; i < count; i++)
             {
-                
+
                 if (tempCity.isEqual(&cityArray[i], &tempCity))
                 {
                     cityArray[i].copyLocation(&tempCity);
@@ -203,7 +200,9 @@ char* Vector::returnname(char *abv1)
 
 char* Vector::returnStateName(char *abv1)
 {
+
     for (int i = 0; i < count; i++)
+
         if (cityArray[i].cmpAbv(abv1) == 0)
             return cityArray[i].getState();
     return strdup("State Name Not Found");
