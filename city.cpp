@@ -1,8 +1,3 @@
-//Style: 8 out of 9
-//Design: 21 out of 23
-//Const: 5 out of 7
-//Operation: 11 out of 11
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -94,21 +89,30 @@ bool City::hasAirport()
     
 } // hasAirport()
                       
-double City::calcDistance(City city2)
+void City::calcDistance(const City *city1, const City *city2)
 {
+    City test;
     int R = 3963;
-    return (acos(sin(this->latitude * M_PI / 180)
-               * sin(city2.latitude * M_PI / 180)
-               + cos(this->latitude * M_PI / 180)
-               * cos(city2.latitude * M_PI / 180)
-               * cos(this->longitude * M_PI / 180
-               - city2.longitude * M_PI / 180))) * R;
+    int passengers;
+    int dist = floor(acos(sin(city1->latitude * M_PI / 180)
+               * sin(city2->latitude * M_PI / 180)
+               + cos(city1->latitude * M_PI / 180)
+               * cos(city2->latitude * M_PI / 180)
+               * cos(city1->longitude * M_PI / 180
+               - city2->longitude * M_PI / 180)) * R);
 
+    if (dist < 100)
+        passengers = 0;
+
+    else // farthur than 100 miles
+        passengers = test.calcPopulation(city1, city2);
+
+    printf("%d passengers fly the %d miles from\n", passengers, dist);
 } // calcDistance()
 
-double City::calcPopulation(City city2)
+int const City::calcPopulation(const City *city1, const City *city2)
 {
-    return (this->population * city2.population) / 250000000 ;
+    return floor((city1->population * city2->population) / 250000000) ;
     
 }//double City::calcPopulation(City city2)
 
