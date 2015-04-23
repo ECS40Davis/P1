@@ -12,8 +12,6 @@
 #include <iostream>
 #include "city.h"
 
-#define R 3963
-
 void City::initialize()
 {
     this->name = (char *) malloc(sizeof(char) * 50);
@@ -27,10 +25,12 @@ void City::initialize()
 
 void City::readAirport(char *airports)
 {
+
     if (airports)
     {
         char tempairport[100];
-        sscanf(airports, "%s  %f  %f  %[^,]%*c", tempairport, &latitude, &longitude, name);
+        sscanf(airports, "%s  %f  %f  %[^,]%*c", tempairport,
+                       &latitude, &longitude, name);
         std::string s (tempairport);
         this->airport = strdup(s.substr(1, 3).c_str());
         
@@ -47,8 +47,9 @@ void City::readCities(char *n, char *st, float pop)
                       
 bool City::isEqual(const City *city1, const City *city2)
 {
+
     if (strcmp(city2->name, city1->name) == 0)
-	return true;
+        return true;
     return false;
         
 } // isEqual()
@@ -73,7 +74,7 @@ void City::deallocate()
 void City::setAirport(const char *airportName)
 {    
     airport = strdup(airportName);
-}
+}//void City::setAirport(const char *airportName)
                       
 bool City::hasAirport()
 {
@@ -82,12 +83,12 @@ bool City::hasAirport()
     
     while (this->airport[i])
     {
-	c = this->airport[i];
+        c = this->airport[i];
 
-	if (!isupper(c))
+        if (!isupper(c))
             return false;
-	i++;
-    }
+        i++;
+    }//while (this->airport[i])
     
     return true;
     
@@ -95,9 +96,13 @@ bool City::hasAirport()
                       
 double City::calcDistance(City city2)
 {
-    return (acos(sin(this->latitude * M_PI/180) * sin(city2.latitude * M_PI/180)
-               + cos(this->latitude * M_PI/180) * cos(city2.latitude * M_PI/180)
-               * cos(this->longitude * M_PI/180 - city2.longitude * M_PI/180))) * R;
+    int R = 3963;
+    return (acos(sin(this->latitude * M_PI / 180)
+               * sin(city2.latitude * M_PI / 180)
+               + cos(this->latitude * M_PI / 180)
+               * cos(city2.latitude * M_PI / 180)
+               * cos(this->longitude * M_PI / 180
+               - city2.longitude * M_PI / 180))) * R;
 
 } // calcDistance()
 
@@ -105,7 +110,7 @@ double City::calcPopulation(City city2)
 {
     return (this->population * city2.population) / 250000000 ;
     
-}
+}//double City::calcPopulation(City city2)
 
 // New Functions
 
@@ -127,4 +132,4 @@ char* City::getName(void)
 char* City::getState(void)
 {
   return state;
-}
+}//char* City::getState(void)
