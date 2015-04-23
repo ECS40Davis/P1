@@ -1,8 +1,3 @@
-//Style: 8 out of 9
-//Design: 21 out of 23
-//Const: 5 out of 7
-//Operation: 11 out of 11
-
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
@@ -153,30 +148,19 @@ void Vector::cleanCities()
     cityArray = newSpace;
 } //end cleanCity
 
-double Vector::calcDistance(char *abv1, char *abv2)
+void Vector::calcDistance(const Vector * vect, char *abv1, char *abv2)
 {
-    int index = findAirport(abv1, cityArray);
+    int index = findAirport(abv1, vect->cityArray);
     City city1 = cityArray[index];
     
-    int index2 = findAirport(abv2, cityArray);
+    int index2 = findAirport(abv2, vect->cityArray);
     City city2 = cityArray[index2];
     
-    return city1.calcDistance(city2);
+    city1.calcDistance(&city1, &city2);
     
     //return cityArray[findAirport(abv1)].calcDistance(cityArray[findAirport(abv2)])
     
 } // calcDistance()
-                      
-double Vector::calcPopulation(char *abv1, char*abv2)
-{
-    int index = findAirport(abv1, cityArray);
-    City city1 = cityArray[index];
-    
-    int index2 = findAirport(abv2, cityArray);
-    City city2 = cityArray[index2];
-    
-    return city1.calcPopulation(city2);
-} //calcPop
 
 void Vector::deallocate()
 {
