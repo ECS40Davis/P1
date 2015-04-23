@@ -1,8 +1,3 @@
-//Style: 8 out of 9
-//Design: 21 out of 23
-//Const: 5 out of 7
-//Operation: 11 out of 11
-
 #ifndef VECTOR_H
   #define VECTOR_H
 #include "city.h"
@@ -30,14 +25,12 @@ class Vector
         void readCities();
         
         // return city index in cityarray that has specified airport, else -1
-        int findAirport(char *airportName);
+        int findAirport(const char *airportName, const City *cityArr);
         
         void cleanCities();
     
         // calls City's calcDistance()
-        double calcDistance(char *abv1, char *abv2);
-        
-        double calcPopulation(char *abv1, char*abv2);
+        void calcDistance(const Vector * vect, char *abv1, char *abv2);
     
         // kills memory leaks or unrecoverable space
         void deallocate();
